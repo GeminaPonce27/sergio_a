@@ -85,7 +85,7 @@ export default function AdjacencyMatrix() {
             <tr>
                 <th style={styles.cornerCell}>↓ from / to →</th>
                 {nodes.map((col) => (
-                <th key={col.id} style={styles.headerCell}>{col.id}</th>
+                <th key={col.id} style={styles.headerCell}>{col.label}</th>
                 ))}
                 <th>∑</th>
                 <th>Cont Filas</th>
@@ -94,7 +94,7 @@ export default function AdjacencyMatrix() {
             <tbody>
             {nodes.map((row) => (
                 <tr key={row.id}>
-                <td style={styles.rowHeaderCell}>{row.id}</td>
+                <td style={styles.rowHeaderCell}>{row.label}</td>
                 {nodes.map((col) => {
                     const val = matrix[row.id][col.id];
                     const isDiag = row.id === col.id;
